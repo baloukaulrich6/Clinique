@@ -1,0 +1,188 @@
+@charset 'UTF-8';
+/* Slider */
+.slick-loading .slick-list
+{
+    background: #fff url('ajax-loader.gif') center center no-repeat;
+}
+
+/* Icons */
+@font-face
+{
+    font-family: 'slick';
+    font-weight: normal;
+    font-style: normal;
+
+    src: url('fonts/slick.eot');
+    src: url('fonts/slickd41d.eot?#iefix') format('embedded-opentype'), url('fonts/slick.woff') format('woff'), url('fonts/slick.ttf') format('truetype'), url('fonts/slick.svg#slick') format('svg');
+}
+/* Arrows */
+.slick-prev,
+.slick-next
+{
+    width: 70px;
+    height: 70px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    opacity: 1;
+    position: absolute;
+    font-size: 0;
+    padding: 0;
+    background-image: linear-gradient(white, white), linear-gradient(248deg, #404040,#e2e2e2);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.slick-prev:hover,
+.slick-next:hover{
+    opacity: .75;
+}
+.slick-prev.slick-disabled,
+.slick-next.slick-disabled
+{
+    opacity: .25;
+}
+
+.slick-prev:before,
+.slick-next:before
+{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 38px;
+    height: 7px;
+    transform: translate(-50%, -50%);
+}
+[dir='rtl'] .slick-prev
+{
+    right: -25px;
+    left: auto;
+}
+.slick-prev:before
+{
+    background-image: url("data:image/svg+xml,%3Csvg width='38' height='7' viewBox='0 0 38 7' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='m34.197.099 3.255 2.395c.35.257.549.63.548 1.02 0 .392-.202.763-.552 1.019l-3.252 2.37a.51.51 0 0 1-.712-.114.515.515 0 0 1 .113-.718l2.824-2.058H0V2.987l36.392-.001L33.594.928a.515.515 0 0 1-.11-.718.508.508 0 0 1 .713-.111z' fill='%23000' fill-rule='nonzero'/%3E %3C/svg%3E ");
+    transform: rotate(180deg) translate(50%, 50%);
+}
+[dir='rtl'] .slick-prev:before
+{
+    content: '←';
+}
+
+[dir='rtl'] .slick-next
+{
+    right: auto;
+    left: -25px;
+}
+.slick-next:before
+{
+    background-image: url("data:image/svg+xml,%3Csvg width='38' height='7' viewBox='0 0 38 7' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='m34.197.099 3.255 2.395c.35.257.549.63.548 1.02 0 .392-.202.763-.552 1.019l-3.252 2.37a.51.51 0 0 1-.712-.114.515.515 0 0 1 .113-.718l2.824-2.058H0V2.987l36.392-.001L33.594.928a.515.515 0 0 1-.11-.718.508.508 0 0 1 .713-.111z' fill='%23000' fill-rule='nonzero'/%3E %3C/svg%3E ");
+}
+[dir='rtl'] .slick-next:before
+{
+    content: '←';
+}
+
+@media (max-width: 768px){
+    .slick-prev, 
+    .slick-next{
+        width: 56px;
+        height: 56px;
+    }
+    .slick-prev:before,
+    .slick-next:before{
+        width: 30px;
+        height: 6px;
+        background-size: 30px 6px;
+    }
+}
+
+/* Dots */
+.slick-dotted.slick-slider
+{
+    margin-bottom: 30px;
+}
+
+.slick-dots
+{
+    position: absolute;
+    bottom: -25px;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.slick-dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.slick-dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus
+{
+    outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+{
+    opacity: 1;
+}
+.slick-dots li button:before
+{
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: .25;
+    color: black;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before
+{
+    opacity: .75;
+    color: black;
+}
